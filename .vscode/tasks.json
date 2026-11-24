@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "生成素材（图标/复选框/国旗/按钮/单元格）",
+      "type": "shell",
+      "command": "python make_icon.py; python mk_checkboxes.py; python mk_flags.py; python mk_btn_icons.py; python mk_cells.py",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "打包：中文版 exe",
+      "type": "shell",
+      "command": "python -m PyInstaller --noconfirm --onefile --windowed --name 'Uber发票助手' --icon icon.ico --version-file version_info.txt --add-data 'app_icon.png;.' --add-data 'chk_off.png;.' --add-data 'chk_on.png;.' --add-data 'chk_disabled.png;.' --add-data 'btn_all.png;.' --add-data 'btn_none.png;.' --add-data 'btn_clear.png;.' --add-data 'flag_SAR.png;.' --add-data 'flag_AED.png;.' --add-data 'flag_QAR.png;.' --add-data 'flag_BHD.png;.' --add-data 'flag_KWD.png;.' --add-data 'flag_OMR.png;.' --add-data 'flag_EGP.png;.' --add-data 'flag_USD.png;.' --add-data 'flag_GBP.png;.' --add-data 'flag_EUR.png;.' --add-data 'flag_OTHER.png;.' --add-data 'cells;cells' --distpath dist --workpath build_zh uber_tool.py",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "打包：英文版 exe",
+      "type": "shell",
+      "command": "python -m PyInstaller --noconfirm --onefile --windowed --name 'UberInvoiceTool' --icon icon.ico --version-file version_info_en.txt --add-data 'app_icon.png;.' --add-data 'chk_off.png;.' --add-data 'chk_on.png;.' --add-data 'chk_disabled.png;.' --add-data 'btn_all.png;.' --add-data 'btn_none.png;.' --add-data 'btn_clear.png;.' --add-data 'flag_SAR.png;.' --add-data 'flag_AED.png;.' --add-data 'flag_QAR.png;.' --add-data 'flag_BHD.png;.' --add-data 'flag_KWD.png;.' --add-data 'flag_OMR.png;.' --add-data 'flag_EGP.png;.' --add-data 'flag_USD.png;.' --add-data 'flag_GBP.png;.' --add-data 'flag_EUR.png;.' --add-data 'flag_OTHER.png;.' --add-data 'cells;cells' --distpath dist --workpath build_en uber_tool_en.py",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "打包：两个版本",
+      "dependsOrder": "sequence",
+      "dependsOn": ["打包：中文版 exe", "打包：英文版 exe"],
+      "problemMatcher": []
+    }
+  ]
+}

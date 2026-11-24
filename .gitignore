@@ -1,0 +1,37 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+
+# PyInstaller
+build/
+build_zh/
+build_en/
+dist/
+dist_next/
+*.spec
+
+# 生成的素材（由 make_icon.py / mk_*.py 重新生成）
+icon.ico
+app_icon.png
+icon_preview.png
+icon_small_preview.png
+chk_off.png
+chk_on.png
+chk_disabled.png
+chk_preview.png
+flag_*.png
+btn_all.png
+btn_none.png
+btn_clear.png
+btn_preview.png
+cell_preview.png
+cells/
+
+# 分享包（体积大，走 Release）
+share/*.zip
+
+# 本地临时
+*.log
+err*.txt
+out.txt
+shot_*.png

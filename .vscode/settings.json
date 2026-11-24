@@ -1,0 +1,16 @@
+{
+  "files.encoding": "utf8",
+  "files.eol": "\r\n",
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "terminal.integrated.env.windows": {
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "python.analysis.extraPaths": ["${workspaceFolder}"],
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/build": true,
+    "**/build_zh": true,
+    "**/build_en": true
+  }
+}
